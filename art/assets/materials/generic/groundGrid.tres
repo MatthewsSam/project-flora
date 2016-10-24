@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=1]
+
+[ext_resource path="res://art/assets/textures/generic/groundGrid_d.png" type="Texture" id=1]
+[ext_resource path="res://art/assets/textures/generic/groundGrid_n.png" type="Texture" id=2]
+[ext_resource path="res://art/assets/textures/generic/groundGrid_s.png" type="Texture" id=3]
+
+[sub_resource type="MaterialShaderGraph" id=1]
+
+_code = { "fragment":"vec3 nd1sl5=vec3(UV,0);\nvec3 DIFFUSE_OUT=vec3(0,0,0);\nfloat ALPHA_OUT=0;\nuniform texture Diffuse;vec4 rt_read_tex2=tex(Diffuse,nd1sl5.xy);\nvec3 nd2sl0=rt_read_tex2.rgb;\nfloat nd2sl1=rt_read_tex2.a;\nuniform texture Specular;vec4 rt_read_tex5=tex(Specular,nd1sl5.xy);\nvec3 nd5sl0=rt_read_tex5.rgb;\nfloat nd5sl1=rt_read_tex5.a;\nfloat nd3sl0def=1;\nfloat nd3sl0=nd3sl0def-nd2sl1;\nuniform texture Normal;vec4 rt_read_tex4=tex(Normal,nd1sl5.xy);\nvec3 nd4sl0=rt_read_tex4.rgb;\nfloat nd4sl1=rt_read_tex4.a;\nfloat nd6sl0=50;\nfloat nd7sl0=-0.3;\nDIFFUSE_OUT=nd2sl0;\nSPECULAR=nd5sl0;\nSPEC_EXP=nd6sl0;\nNORMALMAP=nd4sl0;\nNORMALMAP_DEPTH=nd7sl0;\nDISCARD=nd3sl0>0.5;\nDIFFUSE=DIFFUSE_OUT;\n", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+_data = { "shaders":[ [ 0, 33, Vector2( 350, 40 ), null, null, [  ], 1, 0, Vector2( 50, 40 ), null, null, [  ] ], [ 0, 33, Vector2( 681, -119 ), null, null, [ 0, 2, 0, 2, 5, 0, 3, 6, 0, 8, 4, 0, 9, 7, 0, 10, 3, 0 ], 1, 0, Vector2( -87, -17 ), null, null, [  ], 2, 30, Vector2( 325, 53 ), "Diffuse", null, [ 0, 1, 5, 2147483647, 0, null ], 3, 7, Vector2( 499, 234 ), 1, null, [ 1, 2, 1, 2147483647, 0, 1.0, 2147483647, 1, null ], 4, 30, Vector2( 322, -141 ), "Normal", null, [ 0, 1, 5, 2147483647, 0, null ], 5, 30, Vector2( 155, -125 ), "Specular", null, [ 0, 1, 5, 2147483647, 0, null ], 6, 1, Vector2( 513, -119 ), 50.0, null, [  ], 7, 1, Vector2( 512, 127 ), -0.3, null, [  ] ], [ 0, 33, Vector2( 350, 40 ), null, null, [  ], 1, 0, Vector2( 50, 40 ), null, null, [  ] ] ] }
+
+[resource]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = false
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 0.0
+shader/shader = SubResource( 1 )
+shader_param/Diffuse = ExtResource( 1 )
+shader_param/Specular = ExtResource( 3 )
+shader_param/Normal = ExtResource( 2 )
+
