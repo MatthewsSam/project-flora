@@ -12,3 +12,5 @@ Due to the limited amount of ressources it would be better to keep everything si
 6. All textures/models would be preferably avaliable at the highest resolution possible (for an eventual future Godot 3.0 demo)
 7. Levels in a closed environement
 8. Located in a steampunk lab/greenhouse/botanical garden
+
+Please read the wiki (https://github.com/samuncle/project-chloris/wiki) before starting
