@@ -141,6 +141,8 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 editor/display_folded = true
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54437, 0 )
+view_sensitivity = 0.3
+movement_speed = 0.4
 
 [node name="global_lighting" type="Spatial" parent="."]
 
