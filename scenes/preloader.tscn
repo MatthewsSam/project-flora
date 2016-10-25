@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scenes/preloader.gd" type="Script" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Label\n\nfunc _ready():\n\tset_text(\"Loading...\")\n\tvar root = get_node(\"/root/autoload\").get_scene()\n\troot.connect(\"load_progress\", self, \"_load_progress\")\n\troot.connect(\"load_finished\", self, \"_load_finished\")\n\nfunc _load_progress(loaded, total):\n\tset_text(\"Loaded %d of %d... ( %.1f%% )\" % [loaded, total, float(100.0/total)*loaded])\n\nfunc _load_finished(scene):\n\tset_text(\"Done loading! :D\")"
+
+[node name="Loader" type="Node2D"]
+
+script/script = ExtResource( 1 )
+loading_scene = "res://scenes/levels/level_01/level_01.tscn"
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 18.0
+margin/top = 16.0
+margin/right = 58.0
+margin/bottom = 30.0
+text = "..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = SubResource( 1 )
+
+
