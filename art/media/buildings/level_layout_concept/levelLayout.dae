@@ -5,8 +5,8 @@
 		<author> Anonymous </author>
 		<authoring_tool> Collada Exporter for Blender 2.6+, by Juan Linietsky (juan@codenix.com) </authoring_tool>
 	</contributor>
-	<created>2016-10-24T20:29:19Z     </created>
-	<modified>2016-10-24T20:29:19Z</modified>
+	<created>2016-10-25T11:18:57Z     </created>
+	<modified>2016-10-25T11:18:57Z</modified>
 	<unit meter="1.0" name="meter"/>
 	<up_axis>Z_UP</up_axis>
 </asset>
@@ -97,7 +97,7 @@
 </library_lights>
 <library_visual_scenes>
 	<visual_scene id="id-scene-1" name="scene">
-		<node id="Cube" name="Cube" type="NODE">
+		<node id="Cube-col" name="Cube-col" type="NODE">
 			<matrix sid="transform"> 1.0 0.0 0.0 -3.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0  </matrix>
 			<instance_geometry url="#id-mesh-4">
 				<bind_material>

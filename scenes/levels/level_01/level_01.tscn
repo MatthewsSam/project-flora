@@ -347,13 +347,13 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19 )
 
 [node name="Spatial8" parent="." instance=ExtResource( 6 )]
 
-transform/local = Transform( 0.691675, 0.0902432, -0.182714, -0.0872503, 0.715401, 0.0230482, 0.184162, 0, 0.697156, -1.16081, 0.540142, 14.148 )
+transform/local = Transform( 0.691675, 0.0902432, -0.182714, -0.0872503, 0.715401, 0.0230482, 0.184162, 0, 0.697156, -1.31268, 0.540142, 14.148 )
 
 [node name="physicalFloor" type="TestCube" parent="."]
 
+editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.605293, 5.96065 )
-visibility/visible = false
+transform/local = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -11.6053, 5.96065 )
 layers = 1
 geometry/visible = true
 geometry/material_override = SubResource( 3 )
