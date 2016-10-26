@@ -4,9 +4,9 @@
 [ext_resource path="res://art/assets/textures/nature/mushroomGroup_glow.png" type="Texture" id=2]
 [ext_resource path="res://art/assets/buildings/corridors/industrialCorridor.scn" type="PackedScene" id=3]
 [ext_resource path="res://art/assets/buildings/corridors/industrialArch.scn" type="PackedScene" id=4]
-[ext_resource path="res://art/assets/buildings/corridors/industrialgGrid.scn" type="PackedScene" id=5]
-[ext_resource path="res://art/assets/nature/mushrooms/mushroomgroup.scn" type="PackedScene" id=6]
-[ext_resource path="res://art/assets/furnitures/emergencyLight/emergencyExitLantern.scn" type="PackedScene" id=7]
+[ext_resource path="res://art/assets/furnitures/emergencyLight/emergencyExitLantern.scn" type="PackedScene" id=5]
+[ext_resource path="res://art/assets/buildings/corridors/industrialgGrid.scn" type="PackedScene" id=6]
+[ext_resource path="res://art/assets/nature/mushrooms/mushroomgroup.scn" type="PackedScene" id=7]
 [ext_resource path="res://art/assets/buildings/corridors/industrialFence.scn" type="PackedScene" id=8]
 [ext_resource path="res://art/assets/buildings/levelLayout/levelLayout.scn" type="PackedScene" id=9]
 
@@ -100,8 +100,6 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 editor/display_folded = true
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3.45563, 0 )
-view_sensitivity = 0.3
-movement_speed = 0.4
 
 [node name="global_lighting" type="Spatial" parent="."]
 
@@ -165,6 +163,7 @@ shadow/zoffset_scale = 2.0
 [node name="debug_light" type="DirectionalLight" parent="global_lighting"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visibility/visible = false
 layers = 1
 params/enabled = true
 params/editor_only = true
@@ -307,7 +306,49 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -4, -7 )
 
 [node name="industrialArch" parent="main_walls" instance=ExtResource( 4 )]
 
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3.61142, 4 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3.61142, 3.5 )
+
+[node name="industrialArch1" parent="main_walls" instance=ExtResource( 4 )]
+
+transform/local = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, -3.61142, 1 )
+
+[node name="industrialArch2" parent="main_walls" instance=ExtResource( 4 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3.61142, -1.5 )
+
+[node name="industrialArch3" parent="main_walls" instance=ExtResource( 4 )]
+
+transform/local = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, -3.61142, -4 )
+
+[node name="industrialArch4" parent="main_walls" instance=ExtResource( 4 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3.61142, -6.5 )
+
+[node name="emergency_light" type="OmniLight" parent="main_walls"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37778, -1.8966, -0.0991499 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 0.203125, 1, 0.477051, 1 )
+colors/specular = Color( 0.182769, 0.539062, 0.0379028, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 1.05397
+params/attenuation = 0.450625
+
+[node name="emergencyExitLantern" parent="main_walls" instance=ExtResource( 5 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74444, -2.12464, -0.11222 )
 
 [node name="Spatial7 2" parent="." instance=ExtResource( 4 )]
 
@@ -329,39 +370,13 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.388576, 10 )
 
 transform/local = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.388576, 2 )
 
-[node name="Spatial 4" parent="." instance=ExtResource( 5 )]
+[node name="Spatial 4" parent="." instance=ExtResource( 6 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19 )
 
-[node name="Spatial8" parent="." instance=ExtResource( 6 )]
+[node name="Spatial8" parent="." instance=ExtResource( 7 )]
 
 transform/local = Transform( 0.691675, 0.0902432, -0.182714, -0.0872503, 0.715401, 0.0230482, 0.184162, 0, 0.697156, -1.31268, 0.540142, 14.148 )
-
-[node name="emergency_light" type="OmniLight" parent="."]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83003, 1.71209, -1.59915 )
-layers = 1
-params/enabled = true
-params/editor_only = false
-params/bake_mode = 0
-params/energy = 1.0
-colors/diffuse = Color( 0.203125, 1, 0.477051, 1 )
-colors/specular = Color( 0.182769, 0.539062, 0.0379028, 1 )
-shadow/shadow = false
-shadow/darkening = 0.0
-shadow/z_offset = 0.001
-shadow/z_slope_scale = 0.0
-shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
-projector = null
-operator = 0
-params/radius = 1.05397
-params/attenuation = 0.450625
-
-[node name="emergencyExitLantern" parent="." instance=ExtResource( 7 )]
-
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19669, 1.48405, -1.61222 )
 
 [node name="fence" type="Spatial" parent="."]
 
