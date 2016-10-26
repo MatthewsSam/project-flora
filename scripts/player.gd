@@ -180,8 +180,6 @@ func process_internal_motion(direction, delta):
 	
 	if grounded:
 		vvel *= 0
-	
-	print(grounded)
 
 # stub, if we have conveyor belts or something we'll need this
 # probably a more appropriate place for friction if i can get that working
