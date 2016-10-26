@@ -9,7 +9,7 @@ script/source = "extends Label\n\nfunc _ready():\n\tset_text(\"Loading...\")\n\t
 [node name="Loader" type="Node2D"]
 
 script/script = ExtResource( 1 )
-loading_scene = "res://scenes/levels/level_01/level_01.tscn"
+loading_scene = "res://scenes/levels/test_scene/test_scene.tscn"
 
 [node name="Label" type="Label" parent="."]
 
