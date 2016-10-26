@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://scenes/entities/players/player.scn" type="PackedScene" id=1]
 [ext_resource path="res://art/assets/textures/nature/mushroomGroup_glow.png" type="Texture" id=2]
@@ -92,47 +92,6 @@ textures/glow_tc = 0
 textures/normal_tc = 0
 textures/shade_param_tc = 0
 
-[sub_resource type="FixedMaterial" id=3]
-
-flags/visible = true
-flags/double_sided = false
-flags/invert_faces = false
-flags/unshaded = false
-flags/on_top = false
-flags/lightmap_on_uv2 = true
-flags/colarray_is_srgb = true
-params/blend_mode = 0
-params/depth_draw = 1
-params/line_width = 0.0
-fixed_flags/use_alpha = false
-fixed_flags/use_color_array = false
-fixed_flags/use_point_size = false
-fixed_flags/discard_alpha = false
-fixed_flags/use_xy_normalmap = false
-params/diffuse = Color( 0.429688, 0.291201, 0.129242, 1 )
-params/specular = Color( 0, 0, 0, 1 )
-params/emission = Color( 0, 0, 0, 1 )
-params/specular_exp = 40
-params/detail_mix = 1.0
-params/normal_depth = 1
-params/shader = 0
-params/shader_param = 0.5
-params/glow = 0
-params/point_size = 1.0
-uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-textures/diffuse_tc = 0
-textures/detail_tc = 0
-textures/specular_tc = 0
-textures/emission_tc = 0
-textures/specular_exp_tc = 0
-textures/glow_tc = 0
-textures/normal_tc = 0
-textures/shade_param_tc = 0
-
-[sub_resource type="BoxShape" id=4]
-
-extents = Vector3( 1, 1, 1 )
-
 [node name="world" type="Spatial"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -140,7 +99,7 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="player" parent="." instance=ExtResource( 1 )]
 
 editor/display_folded = true
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54437, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3.45563, 0 )
 view_sensitivity = 0.3
 movement_speed = 0.4
 
@@ -199,6 +158,29 @@ shadow/blur_passes = 8.0
 projector = null
 operator = 0
 shadow/mode = 3
+shadow/max_distance = 0.0
+shadow/split_weight = 0.5
+shadow/zoffset_scale = 2.0
+
+[node name="debug_light" type="DirectionalLight" parent="global_lighting"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+layers = 1
+params/enabled = true
+params/editor_only = true
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+shadow/mode = 0
 shadow/max_distance = 0.0
 shadow/split_weight = 0.5
 shadow/zoffset_scale = 2.0
@@ -315,13 +297,17 @@ operator = 0
 params/radius = 3.61266
 params/attenuation = 1.0
 
-[node name="Spatial 2" parent="." instance=ExtResource( 3 )]
+[node name="main_walls" type="Spatial" parent="."]
 
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19 )
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="Spatial 3" parent="." instance=ExtResource( 4 )]
+[node name="industrialCorridor" parent="main_walls" instance=ExtResource( 3 )]
 
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.388576, 15.5 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -4, -7 )
+
+[node name="industrialArch" parent="main_walls" instance=ExtResource( 4 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -3.61142, 4 )
 
 [node name="Spatial7 2" parent="." instance=ExtResource( 4 )]
 
@@ -350,137 +336,6 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19 )
 [node name="Spatial8" parent="." instance=ExtResource( 6 )]
 
 transform/local = Transform( 0.691675, 0.0902432, -0.182714, -0.0872503, 0.715401, 0.0230482, 0.184162, 0, 0.697156, -1.31268, 0.540142, 14.148 )
-
-[node name="physicalFloor" type="TestCube" parent="."]
-
-editor/display_folded = true
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -11.6053, 5.96065 )
-layers = 1
-geometry/visible = true
-geometry/material_override = SubResource( 3 )
-geometry/cast_shadow = 1
-geometry/receive_shadows = true
-geometry/range_begin = 0.0
-geometry/range_end = 0.0
-geometry/extra_cull_margin = 0.0
-geometry/billboard = false
-geometry/billboard_y = false
-geometry/depth_scale = false
-geometry/visible_in_all_rooms = false
-geometry/use_baked_light = false
-geometry/baked_light_tex_id = 0
-
-[node name="StaticBody" type="StaticBody" parent="physicalFloor"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-input/ray_pickable = true
-input/capture_on_drag = false
-shape_count = 1
-shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="physicalFloor/StaticBody"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 4 )
-trigger = false
-_update_shape_index = 0
-
-[node name="physicalFloor1" type="TestCube" parent="."]
-
-editor/display_folded = true
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 10, 2.93558, 0.94464, 5.96065 )
-visibility/visible = false
-layers = 1
-geometry/visible = true
-geometry/material_override = SubResource( 3 )
-geometry/cast_shadow = 1
-geometry/receive_shadows = true
-geometry/range_begin = 0.0
-geometry/range_end = 0.0
-geometry/extra_cull_margin = 0.0
-geometry/billboard = false
-geometry/billboard_y = false
-geometry/depth_scale = false
-geometry/visible_in_all_rooms = false
-geometry/use_baked_light = false
-geometry/baked_light_tex_id = 0
-
-[node name="StaticBody" type="StaticBody" parent="physicalFloor1"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-input/ray_pickable = true
-input/capture_on_drag = false
-shape_count = 1
-shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="physicalFloor1/StaticBody"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 4 )
-trigger = false
-_update_shape_index = 0
-
-[node name="physicalFloor2" type="TestCube" parent="."]
-
-editor/display_folded = true
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 10, -2.93342, 0.94464, 5.96065 )
-visibility/visible = false
-layers = 1
-geometry/visible = true
-geometry/material_override = SubResource( 3 )
-geometry/cast_shadow = 1
-geometry/receive_shadows = true
-geometry/range_begin = 0.0
-geometry/range_end = 0.0
-geometry/extra_cull_margin = 0.0
-geometry/billboard = false
-geometry/billboard_y = false
-geometry/depth_scale = false
-geometry/visible_in_all_rooms = false
-geometry/use_baked_light = false
-geometry/baked_light_tex_id = 0
-
-[node name="StaticBody" type="StaticBody" parent="physicalFloor2"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-input/ray_pickable = true
-input/capture_on_drag = false
-shape_count = 1
-shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="physicalFloor2/StaticBody"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 4 )
-trigger = false
-_update_shape_index = 0
 
 [node name="emergency_light" type="OmniLight" parent="."]
 
