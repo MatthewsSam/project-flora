@@ -16,7 +16,7 @@ var speed = 0
 
 # jumping control variables
 var gravity = 0.5
-var jump_force = 10
+var jump_force = 7
 
 # it's much simpler to keep horizontal and vertical velocities separated
 # than it is to try to isolate them later

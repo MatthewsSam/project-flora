@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://scenes/entities/players/player.scn" type="PackedScene" id=1]
 [ext_resource path="res://art/assets/textures/nature/mushroomGroup_glow.png" type="Texture" id=2]
 [ext_resource path="res://art/assets/buildings/corridors/industrialCorridor.scn" type="PackedScene" id=3]
 [ext_resource path="res://art/assets/buildings/corridors/industrialArch.scn" type="PackedScene" id=4]
 [ext_resource path="res://art/assets/furnitures/emergencyLight/emergencyExitLantern.scn" type="PackedScene" id=5]
-[ext_resource path="res://art/assets/buildings/corridors/industrialgGrid.scn" type="PackedScene" id=6]
-[ext_resource path="res://art/assets/nature/mushrooms/mushroomgroup.scn" type="PackedScene" id=7]
-[ext_resource path="res://art/assets/buildings/corridors/industrialFence.scn" type="PackedScene" id=8]
-[ext_resource path="res://art/assets/buildings/levelLayout/levelLayout.scn" type="PackedScene" id=9]
+[ext_resource path="res://art/assets/nature/mushrooms/mushroomgroup.scn" type="PackedScene" id=6]
+[ext_resource path="res://art/assets/buildings/corridors/industrialFence.scn" type="PackedScene" id=7]
+[ext_resource path="res://art/assets/buildings/levelLayout/levelLayout.scn" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]
 
@@ -350,31 +349,7 @@ params/attenuation = 0.450625
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74444, -2.12464, -0.11222 )
 
-[node name="Spatial7 2" parent="." instance=ExtResource( 4 )]
-
-transform/local = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.388576, 7 )
-
-[node name="Spatial5" parent="." instance=ExtResource( 4 )]
-
-transform/local = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.388576, 13 )
-
-[node name="Spatial7 3" parent="." instance=ExtResource( 4 )]
-
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.388576, 4.5 )
-
-[node name="Spatial6" parent="." instance=ExtResource( 4 )]
-
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.388576, 10 )
-
-[node name="Spatial7" parent="." instance=ExtResource( 4 )]
-
-transform/local = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.388576, 2 )
-
-[node name="Spatial 4" parent="." instance=ExtResource( 6 )]
-
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19 )
-
-[node name="Spatial8" parent="." instance=ExtResource( 7 )]
+[node name="Spatial8" parent="." instance=ExtResource( 6 )]
 
 transform/local = Transform( 0.691675, 0.0902432, -0.182714, -0.0872503, 0.715401, 0.0230482, 0.184162, 0, 0.697156, -1.31268, 0.540142, 14.148 )
 
@@ -382,11 +357,11 @@ transform/local = Transform( 0.691675, 0.0902432, -0.182714, -0.0872503, 0.71540
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="industrialFence" parent="fence" instance=ExtResource( 8 )]
+[node name="industrialFence" parent="fence" instance=ExtResource( 7 )]
 
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -4, 2.5 )
 
-[node name="Spatial" parent="." instance=ExtResource( 9 )]
+[node name="Spatial" parent="." instance=ExtResource( 8 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0 )
 
